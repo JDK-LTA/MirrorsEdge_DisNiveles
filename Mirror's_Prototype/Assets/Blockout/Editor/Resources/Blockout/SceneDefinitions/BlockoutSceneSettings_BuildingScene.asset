@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlockoutSceneSettings_BuildingScene
   m_EditorClassIdentifier: 
   sceneName: BuildingScene
-  currentTheme: 0
+  currentTheme: 2
   currentTexture: 0
   cameraAnchor: []
   assetDictionary: []
