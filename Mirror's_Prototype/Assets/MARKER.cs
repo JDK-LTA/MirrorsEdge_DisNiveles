@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MARKER : MonoBehaviour
 {
-    [SerializeField] private Transform lastCheckpoint;
+    
+    private Transform lastCheckpoint;
 
     public void NewCheckpoint(Transform newCheckpoint)
     {
@@ -14,14 +15,19 @@ public class MARKER : MonoBehaviour
 
     public void TPToLastCheckpoint()
     {
-        transform.position = lastCheckpoint.position;
-        transform.rotation = lastCheckpoint.rotation;
+        if (lastCheckpoint)
+        {
+            transform.position = lastCheckpoint.position;
+            transform.rotation = lastCheckpoint.rotation;
+        }
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject go = Instantiate(new GameObject(), transform.position, transform.rotation);
+        lastCheckpoint = go.transform;
     }
 
     // Update is called once per frame
