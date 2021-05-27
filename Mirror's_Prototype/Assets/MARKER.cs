@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MARKER : MonoBehaviour
 {
-    
+
     private Transform lastCheckpoint;
 
     public void NewCheckpoint(Transform newCheckpoint)
     {
-        lastCheckpoint.position=newCheckpoint.position;
+        lastCheckpoint.position = newCheckpoint.position;
         lastCheckpoint.rotation = transform.rotation;
     }
 
@@ -19,8 +19,9 @@ public class MARKER : MonoBehaviour
         {
             transform.position = lastCheckpoint.position;
             transform.rotation = lastCheckpoint.rotation;
+            Physics.SyncTransforms();
         }
-        
+
     }
 
     // Start is called before the first frame update
@@ -33,6 +34,6 @@ public class MARKER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

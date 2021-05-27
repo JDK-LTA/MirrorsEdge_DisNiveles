@@ -20,7 +20,7 @@ public class DeadZone : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<MARKER>())
+        if (other.tag == "Player")
         {
             other.GetComponent<MARKER>().TPToLastCheckpoint();
         }
